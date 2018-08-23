@@ -3,7 +3,7 @@ dataFile <- "./household_power_consumption.txt"
 data <- read.table(dataFile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
 cutdata <- data[data$Date %in% c("1/2/2007","2/2/2007") ,]
 
-datetime <- strptime(paste(subSetData$Date, subSetData$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
+datetime <- strptime(paste(cutdata$Date, cutdata$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
 GAP <- as.numeric(cutdata$Global_active_power)
 GRP <- as.numeric(cutdata$Global_reactive_power)
 voltage <- as.numeric(cutdata$Voltage)
